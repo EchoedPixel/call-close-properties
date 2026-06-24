@@ -15,9 +15,9 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-gradient-gold text-background font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:brightness-110 active:scale-[0.98]",
+    "bg-gradient-gold text-on-primary font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:brightness-110 active:scale-[0.98]",
   secondary:
-    "glass text-white hover:border-primary/30 hover:bg-surface-elevated/80",
+    "glass text-foreground hover:border-primary/30 hover:bg-surface-elevated/80",
   outline:
     "border border-primary/40 text-primary-light hover:bg-primary/5 hover:border-primary/60",
   ghost: "text-muted hover:text-primary-light hover:bg-white/5",
@@ -43,7 +43,7 @@ export function Button({
   external = false,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center font-medium transition-all duration-300",
+    "inline-flex items-center justify-center font-medium transition-colors duration-150",
     variants[variant],
     sizes[size],
     className

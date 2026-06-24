@@ -29,8 +29,8 @@ export default function TestimonialsPage() {
       <Section>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {TRUST_INDICATORS.map((indicator, index) => (
-            <FadeIn key={indicator.label} delay={index * 0.05}>
-              <Card glass className="text-center">
+            <FadeIn key={indicator.label} delay={index * 0.05} className="h-full">
+              <Card glass className="h-full text-center">
                 <DynamicIcon
                   name={indicator.icon}
                   className="mx-auto mb-3 h-6 w-6 text-primary"

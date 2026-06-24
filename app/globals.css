@@ -1,25 +1,75 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0b1220;
-  --color-surface: #111827;
-  --color-surface-elevated: #1a2332;
-  --color-border: #1f2937;
-  --color-border-gold: rgba(212, 166, 79, 0.2);
-  --color-primary: #d4a64f;
-  --color-primary-light: #e6c06b;
-  --color-primary-dark: #b8923f;
-  --color-accent: #e6c06b;
-  --color-muted: #9ca3af;
-  --color-foreground: #ffffff;
+  --color-background: var(--theme-background);
+  --color-surface: var(--theme-surface);
+  --color-surface-elevated: var(--theme-surface-elevated);
+  --color-border: var(--theme-border);
+  --color-border-gold: var(--theme-border-gold);
+  --color-primary: var(--theme-primary);
+  --color-primary-light: var(--theme-primary-light);
+  --color-primary-dark: var(--theme-primary-dark);
+  --color-accent: var(--theme-accent);
+  --color-muted: var(--theme-muted);
+  --color-foreground: var(--theme-foreground);
+  --color-on-primary: var(--theme-on-primary);
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-display: var(--font-manrope), var(--font-plus-jakarta), system-ui, sans-serif;
   --font-heading: var(--font-plus-jakarta), var(--font-manrope), system-ui, sans-serif;
 }
 
 @layer base {
+  :root,
+  .dark,
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --theme-background: #050505;
+    --theme-surface: #0a0a0a;
+    --theme-surface-elevated: #121212;
+    --theme-border: #232323;
+    --theme-border-gold: rgba(212, 166, 79, 0.2);
+    --theme-primary: #d4a64f;
+    --theme-primary-light: #e6c06b;
+    --theme-primary-dark: #b8923f;
+    --theme-accent: #e6c06b;
+    --theme-muted: #a1a1aa;
+    --theme-foreground: #ffffff;
+    --theme-on-primary: #050505;
+    --theme-glass: rgba(10, 10, 10, 0.82);
+    --theme-glass-light: rgba(255, 255, 255, 0.035);
+    --theme-card-shadow: 0 20px 58px rgba(0, 0, 0, 0.42);
+  }
+
+  .light,
+  [data-theme="light"] {
+    color-scheme: light;
+    --theme-background: #faf7f0;
+    --theme-surface: #ffffff;
+    --theme-surface-elevated: #f5f2ea;
+    --theme-border: #e5dccb;
+    --theme-border-gold: rgba(184, 130, 32, 0.34);
+    --theme-primary: #b98220;
+    --theme-primary-light: #cfa23e;
+    --theme-primary-dark: #926316;
+    --theme-accent: #cfa23e;
+    --theme-muted: #374151;
+    --theme-foreground: #111111;
+    --theme-on-primary: #111111;
+    --theme-glass: rgba(255, 255, 255, 0.86);
+    --theme-glass-light: rgba(255, 255, 255, 0.64);
+    --theme-card-shadow: 0 18px 46px rgba(82, 59, 18, 0.16);
+  }
+
   html {
     scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
   }
 
   body {
@@ -35,27 +85,32 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #d4a64f 0%, #e6c06b 50%, #d4a64f 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-primary-light) 50%,
+      var(--color-primary) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-subtle {
-    background: linear-gradient(180deg, #ffffff 0%, #e6c06b 100%);
+    background: linear-gradient(180deg, var(--color-foreground) 0%, var(--color-primary-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-gold {
-    background: linear-gradient(135deg, #d4a64f 0%, #e6c06b 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   }
 
   .bg-gradient-radial {
     background: radial-gradient(
       ellipse 80% 60% at 50% -10%,
-      rgba(212, 166, 79, 0.12),
+      color-mix(in srgb, var(--color-primary) 10%, transparent),
       transparent 60%
     );
   }
@@ -63,32 +118,33 @@
   .bg-gradient-radial-bottom {
     background: radial-gradient(
       ellipse 60% 40% at 50% 100%,
-      rgba(212, 166, 79, 0.06),
+      color-mix(in srgb, var(--color-primary) 5%, transparent),
       transparent 60%
     );
   }
 
   .grid-pattern {
     background-image: linear-gradient(
-        rgba(212, 166, 79, 0.025) 1px,
+        color-mix(in srgb, var(--color-primary) 3%, transparent) 1px,
         transparent 1px
       ),
-      linear-gradient(90deg, rgba(212, 166, 79, 0.025) 1px, transparent 1px);
+      linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 3%, transparent) 1px, transparent 1px);
     background-size: 72px 72px;
   }
 
   .glass {
-    background: rgba(17, 24, 39, 0.6);
+    background: var(--theme-glass);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(212, 166, 79, 0.1);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 16%, transparent);
+    box-shadow: var(--theme-card-shadow);
   }
 
   .glass-light {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--theme-glass-light);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
   }
 
   .gradient-border {
@@ -105,8 +161,8 @@
     padding: 1px;
     background: linear-gradient(
       135deg,
-      rgba(212, 166, 79, 0.35),
-      rgba(212, 166, 79, 0.05)
+      color-mix(in srgb, var(--color-primary) 38%, transparent),
+      color-mix(in srgb, var(--color-primary) 8%, transparent)
     );
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -116,10 +172,29 @@
   }
 
   .gold-glow {
-    box-shadow: 0 0 40px rgba(212, 166, 79, 0.08);
+    box-shadow: 0 0 36px color-mix(in srgb, var(--color-primary) 8%, transparent);
   }
 
   .gold-glow-hover:hover {
-    box-shadow: 0 8px 32px rgba(212, 166, 79, 0.15);
+    box-shadow: 0 8px 28px color-mix(in srgb, var(--color-primary) 14%, transparent);
+  }
+
+  .text-white,
+  .text-gray-100,
+  .text-gray-300,
+  .hover\:text-white:hover {
+    color: var(--color-foreground) !important;
+  }
+
+  .placeholder\:text-gray-500::placeholder {
+    color: color-mix(in srgb, var(--color-muted) 75%, transparent) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0ms;
+    }
   }
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
 
@@ -60,13 +61,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem("call-close-theme") === "light" ? "light" : "dark";
+                  var root = document.documentElement;
+                  root.classList.toggle("dark", theme === "dark");
+                  root.classList.toggle("light", theme === "light");
+                  root.dataset.theme = theme;
+                } catch (_) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${manrope.variable} ${plusJakarta.variable} font-sans bg-background text-foreground antialiased`}
       >
-        <Navbar />
-        <main className="min-h-screen pt-20">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main className="min-h-screen pt-20">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

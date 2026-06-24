@@ -19,11 +19,11 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border p-6 lg:p-8",
+        "rounded-2xl border border-border p-6 shadow-[var(--theme-card-shadow)] lg:p-8",
         glass ? "glass" : "bg-surface",
         gradient && "gradient-border",
         hover &&
-          "transition-all duration-500 gold-glow-hover hover:border-border-gold",
+          "transition-colors duration-150 gold-glow-hover hover:border-border-gold",
         className
       )}
     >

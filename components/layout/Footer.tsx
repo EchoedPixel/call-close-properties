@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE, NAV_LINKS, FOOTER_SERVICES } from "@/lib/constants";
 import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,10 +14,14 @@ export function Footer() {
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-4">
             <Link href="/" className="group flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-gold">
-                <span className="font-heading text-sm font-bold text-background">
-                  C&C
-                </span>
+              <div className="flex h-12 w-13 items-center justify-center rounded-xl bg-white">
+                <Image
+                  src="/logos.svg"
+                  alt="Company Logo"
+                  width={40}
+                  height={40}
+                  className="scale-120"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading text-lg font-bold text-white">

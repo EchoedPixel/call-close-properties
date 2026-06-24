@@ -4,14 +4,14 @@ export const SITE = {
   tagline: "Real Estate Lead Generation & Sales Support",
   description:
     "Premium lead generation, appointment setting, and sales support exclusively for real estate professionals who want to close more deals—not chase more leads.",
-  email: "callandcloseproperties@gmail.com",
+  email: "callandclosee@gmail.com",
   phone: "+1 (555) 987-6543",
   address: "Serving Real Estate Professionals Nationwide",
   url: "https://callandclose.com",
   bookingUrl:
     "https://calendar.app.google/48tnipZmBxXw31o26",
   social: {
-    linkedin: "https://linkedin.com/company/call-and-close-properties",
+    linkedin: "https://www.linkedin.com/in/call-and-close-properties-1027a6417/",
     instagram: "https://instagram.com/callandclose",
     facebook: "https://facebook.com/callandclose",
   },
@@ -22,7 +22,7 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/industries", label: "Who We Serve" },
-  { href: "/testimonials", label: "Results" },
+  { href: "/testimonials", label: "Reviews" },
   { href: "/contact", label: "Contact" },
   { href: "/book-a-call", label: "Book a Call" },
 ];
