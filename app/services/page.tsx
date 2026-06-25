@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { DynamicIcon } from "@/components/ui/DynamicIcon";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import Image from "next/image";
 
 export const metadata = createPageMetadata(
   "Services",
@@ -60,12 +61,14 @@ export default function ServicesPage() {
                         </Button>
                       </div>
                     </div>
-                    <div className="relative hidden bg-surface-elevated/50 lg:block">
-                      <div className="absolute inset-0 bg-gradient-radial" />
-                      <div className="relative flex h-full min-h-[320px] items-center justify-center p-12">
-                        <DynamicIcon
-                          name={service.icon}
-                          className="h-28 w-28 text-primary/15"
+                    <div className="relative hidden bg-surface-elevated/50 lg:flex items-stretch justify-stretch overflow-hidden">
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover object-center"
+                          priority={index === 0}
                         />
                       </div>
                     </div>

@@ -1,3 +1,4 @@
+
 export const SITE = {
   name: "Call & Close Properties",
   shortName: "Call & Close",
@@ -24,7 +25,6 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/industries", label: "Who We Serve" },
-  { href: "/testimonials", label: "Reviews" },
   { href: "/contact", label: "Contact" },
   { href: "/book-a-call", label: "Book a Call" },
 ];
@@ -42,6 +42,7 @@ export const SERVICES = [
       "Daily lead quality reporting",
     ],
     icon: "Home",
+    image: "/lead-generation.png",
   },
   {
     slug: "appointment-setting",
@@ -55,6 +56,7 @@ export const SERVICES = [
       "Automated confirmation sequences",
     ],
     icon: "CalendarCheck",
+    image: "/appointment-setting.png",
   },
   {
     slug: "cold-calling",
@@ -68,6 +70,7 @@ export const SERVICES = [
       "Conversion-focused outreach",
     ],
     icon: "Phone",
+    image: "/cold-calling.png",
   },
   {
     slug: "lead-qualification",
@@ -81,6 +84,7 @@ export const SERVICES = [
       "Detailed qualification notes",
     ],
     icon: "ClipboardCheck",
+    image: "/lead-qualification.png",
   },
   {
     slug: "Help With Closing Deals",
@@ -94,6 +98,7 @@ export const SERVICES = [
       "Higher closing rates",
     ],
     icon: "Handshake",
+    image: "/closing-deals.png",
   },
   {
     slug: "follow-up-campaigns",
@@ -107,6 +112,7 @@ export const SERVICES = [
       "Pipeline re-engagement tracking",
     ],
     icon: "RefreshCw",
+    image: "/follow-up-campaigns.png",
   },
   {
     slug: "sales-support",
@@ -120,6 +126,7 @@ export const SERVICES = [
       "Pipeline reporting dashboards",
     ],
     icon: "Handshake",
+    image: "/sales-support.png",
   },
 ];
 
