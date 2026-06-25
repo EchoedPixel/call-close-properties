@@ -1,6 +1,6 @@
-import { Clock, Video, FileText, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { createPageMetadata } from "@/lib/metadata";
-import { BOOKING_BENEFITS, MEETING_INFO } from "@/lib/constants";
+import { BOOKING_BENEFITS } from "@/lib/constants";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";

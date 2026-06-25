@@ -68,12 +68,12 @@ const calendarUrl = isCustomBooking
 <p className="mt-4 text-muted leading-relaxed">
   {isCustomBooking ? (
     <>
-      You're currently viewing our custom appointment calendar.
+      You&apos;re currently viewing our custom appointment calendar.
       Please schedule at least <strong>1–2 business days</strong> in advance.
     </>
   ) : (
     <>
-      Can't find a suitable time in our standard schedule?
+      Can&apos;t find a suitable time in our standard schedule?
       Request a custom appointment outside our regular availability.
       Please allow <strong>1–2 business days</strong> notice for custom scheduling.
     </>

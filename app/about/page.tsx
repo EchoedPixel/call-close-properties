@@ -39,7 +39,7 @@ export default function AboutPage() {
                 to have meaningful conversations and uncover genuine opportunities.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted lg:text-base">
-                That's why we built something different—a dedicated team focused 
+                That&apos;s why we built something different—a dedicated team focused 
                 exclusively on real estate cold calling and lead generation. 
                 We connect with property owners, identify motivation, gather key property 
                 information, and deliver qualified seller leads directly to our clients.
