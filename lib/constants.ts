@@ -3,13 +3,15 @@ export const SITE = {
   shortName: "Call & Close",
   tagline: "Real Estate Lead Generation & Sales Support",
   description:
-    "Premium lead generation, appointment setting, and sales support exclusively for real estate professionals who want to close more deals—not chase more leads.",
+    "Experienced real estate cold callers trained exclusively for wholesalers, realtors , and flippers. With clear communication skills and in-depth knowledge of all exit strategies, they quickly understand your acquisition goals and deliver leads that fit your exact criteria.",
   email: "callandclosee@gmail.com",
   phone: "+1 (555) 987-6543",
   address: "Serving Real Estate Professionals Nationwide",
   url: "https://callandclose.com",
   bookingUrl:
-    "https://calendar.app.google/48tnipZmBxXw31o26",
+    "https://calendar.app.google/47J12QscBW1mVb876",
+  customBookingUrl:
+    "https://calendar.google.com/appointments/schedules/AcZssZ25nyNFuxO4iysXrwtAy0WbmZBafMsNmOr9Wtoj7Z2XNM3BCymJEBRht29CmqvD_qM_rLeOn9Id",
   social: {
     linkedin: "https://www.linkedin.com/in/call-and-close-properties-1027a6417/",
     instagram: "https://instagram.com/callandclose",
@@ -81,6 +83,19 @@ export const SERVICES = [
     icon: "ClipboardCheck",
   },
   {
+    slug: "Help With Closing Deals",
+    title: "Help With Closing Deals",
+    description:
+      "Our experienced closers join the conversation when your prospects are ready to proceed. We help overcome objections, negotiate confidently, and maximize your closing rate while representing your business professionally.",
+    features: [
+      "Professional sales closers",
+      "Objection handling",
+      "Contract & negotiation support",
+      "Higher closing rates",
+    ],
+    icon: "Handshake",
+  },
+  {
     slug: "follow-up-campaigns",
     title: "Follow-Up Campaigns",
     description:
@@ -110,17 +125,17 @@ export const SERVICES = [
 
 export const CLIENT_TYPES = [
   {
-    slug: "individual-agents",
-    name: "Individual Agents",
+    slug: "Home-Buying Companies",
+    name: "Home-Buying Companies",
     description:
-      "Solo agents who need a consistent flow of qualified appointments without spending hours on prospecting and follow-up.",
-    icon: "User",
+      "Growing acquisition teams that need a steady flow of qualified seller leads to keep their pipeline active and focused on closing deals.",
+    icon: "Building",
   },
   {
     slug: "real-estate-teams",
     name: "Real Estate Teams",
     description:
-      "High-performing teams scaling production with dedicated lead generation and appointment-setting support for every agent.",
+      "High-performing real estate teams that need a consistent flow of qualified seller leads to keep their pipeline full and their acquisitions team focused on closing deals.",
     icon: "Users",
   },
   {
@@ -424,12 +439,12 @@ export const BOOKING_BENEFITS = [
   {
     title: "Free Strategy Assessment",
     description:
-      "A focused 30-minute session to evaluate your pipeline, market, and growth potential—no cost, no obligation.",
+      "A focused 30-minute consultation to discuss your target market, lead generation goals, and how our team can help you connect with more motivated sellers.",
   },
   {
     title: "Custom Acquisition Plan",
     description:
-      "Walk away with a tailored lead generation and appointment-setting strategy built for your market.",
+      "Walk away with a tailored lead generation plan designed around your target market, acquisition goals, and ideal seller profile.",
   },
   {
     title: "Honest Fit Evaluation",

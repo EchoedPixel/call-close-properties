@@ -21,7 +21,7 @@ export function ServicesOverview() {
       />
 
       <StaggerChildren className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {SERVICES.map((service) => (
+        {SERVICES.slice(0, 6).map((service) => (
           <StaggerItem key={service.slug}>
             <Card gradient className="group flex h-full flex-col">
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/20">

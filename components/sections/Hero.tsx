@@ -29,9 +29,9 @@ export function Hero() {
 
           <FadeIn delay={0.2}>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-              We help real estate professionals generate qualified leads, book
-              appointments, and close more property sales through expert outbound
-              calling and lead generation strategies.
+              We help real estate investors and home-buying companies
+               connect with motivated property owners through 
+               expert cold calling, lead qualification, and targeted lead generation.
             </p>
           </FadeIn>
 

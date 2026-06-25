@@ -17,7 +17,7 @@ export default function AboutPage() {
       <PageHero
         badge="About Us"
         title="The Sales Infrastructure Real Estate Deserves"
-        description="Call & Close Properties was founded by real estate professionals who understood that the best agents shouldn't spend their days cold calling—they should be closing."
+        description="Call & Close Properties was founded on a simple belief: real estate investors should spend their time closing deals, not chasing leads."
       />
 
       <Section>
@@ -28,26 +28,31 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="mt-5 text-sm leading-relaxed text-muted lg:text-base">
-                Call & Close Properties was born from a simple frustration: top
-                real estate producers were losing hours every week on prospecting,
-                follow-up, and lead qualification—time that should have been spent
-                on showings, negotiations, and closings.
+                Call & Close Properties was born from a simple frustration: 
+                real estate investors were spending too much time searching for 
+                opportunities and not enough time closing deals.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted lg:text-base">
-                Generic call centers couldn&apos;t solve the problem. They lacked
-                real estate expertise, brand alignment, and the premium touch that
-                property sales demand. So we built something different—a dedicated
-                outbound partner trained exclusively for real estate.
+                Reaching property owners, identifying motivated sellers, 
+                and qualifying leads takes time, consistency, and experience. 
+                Generic call centers often lack the real estate knowledge needed 
+                to have meaningful conversations and uncover genuine opportunities.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted lg:text-base">
-                Today, we serve 80+ agents, teams, and brokerages nationwide,
-                generating qualified leads and booked appointments that convert
-                into closed deals.
+                That's why we built something different—a dedicated team focused 
+                exclusively on real estate cold calling and lead generation. 
+                We connect with property owners, identify motivation, gather key property 
+                information, and deliver qualified seller leads directly to our clients.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted lg:text-base">
+                Today, we help real estate investors and home-buying companies generate 
+                acquisition opportunities, build stronger pipelines, and focus on what 
+                they do best: closing deals.
               </p>
             </Card>
           </FadeIn>
 
-          <div className="space-y-6">
+          <div className="flex h-full flex-col justify-center gap-6">
             <FadeIn delay={0.1}>
               <Card glass>
                 <h2 className="font-heading text-xl font-bold text-white">
@@ -75,6 +80,7 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
+      
 
       <Section variant="elevated">
         <FadeIn>

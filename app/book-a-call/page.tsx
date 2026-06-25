@@ -48,44 +48,13 @@ export default function BookACallPage() {
                 </div>
               </div>
             </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <Card gradient>
-                <h3 className="font-heading text-lg font-semibold text-white">
-                  Meeting Details
-                </h3>
-                <ul className="mt-6 space-y-5">
-                  <li className="flex items-start gap-3 text-sm text-muted">
-                    <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <p className="font-medium text-white">Duration</p>
-                      <p>{MEETING_INFO.duration}</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm text-muted">
-                    <Video className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <p className="font-medium text-white">Format</p>
-                      <p>{MEETING_INFO.format}</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm text-muted">
-                    <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <p className="font-medium text-white">How to Prepare</p>
-                      <p>{MEETING_INFO.prepare}</p>
-                    </div>
-                  </li>
-                </ul>
-              </Card>
-            </FadeIn>
           </div>
 
-          <div className="lg:col-span-3">
-            <FadeIn delay={0.1}>
-              <GoogleCalendarBooking />
-            </FadeIn>
-          </div>
+<div className="space-y-8 lg:col-span-3">
+  <FadeIn delay={0.1}>
+    <GoogleCalendarBooking />
+  </FadeIn>
+</div>
         </div>
       </Section>
     </>
