@@ -1,10 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SITE, NAV_LINKS, FOOTER_SERVICES } from "@/lib/constants";
 import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine dark mode assets safely after mounting on the client side
+  const isDark = mounted && theme === "dark";
+  const containerBg = isDark ? "bg-black" : "bg-white";
+  const imageSrc = isDark ? "/ccp logodarkbgnoccp.svg" : "/ccp logowhitebgnoccp.svg";
 
   return (
     <footer className="relative border-t border-border bg-surface">
@@ -14,22 +29,17 @@ export function Footer() {
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-4">
             <Link href="/" className="group flex items-center gap-3">
-              <div className="flex h-12 w-13 items-center justify-center rounded-xl bg-white">
-                <Image
-                  src="/logos.svg"
+              <div 
+                className={`flex h-40 w-95 items-center justify-center rounded-xl transition-colors duration-150 ${containerBg}`}
+              >
+              <Image
+                  key={mounted ? theme : "ssr"} // Forces a clean re-render when theme changes
+                  src={imageSrc}
                   alt="Company Logo"
-                  width={40}
+                  width={50}
                   height={40}
-                  className="scale-120"
+                  className="scale-80 w-auto h-auto"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading text-lg font-bold text-white">
-                  {SITE.shortName}
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-muted">
-                  Properties
-                </span>
               </div>
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted">

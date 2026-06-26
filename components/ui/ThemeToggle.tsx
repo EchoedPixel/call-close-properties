@@ -1,6 +1,7 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
 
@@ -11,8 +12,32 @@ interface ThemeToggleProps {
 
 export function ThemeToggle({ className, showLabel = false }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && theme === "dark";
+
+  if (!mounted) {
+  return (
+    <button
+      type="button"
+      className={cn(
+        "group inline-flex items-center justify-center gap-3 rounded-xl border border-border bg-surface-elevated px-3 py-2",
+        showLabel && "w-full justify-between px-4 py-3.5",
+        className
+      )}
+      aria-hidden="true"
+    >
+      {showLabel && <span>Theme</span>}
+      <span className="flex h-5 w-5" />
+    </button>
+  );
+  }
+  
   return (
     <button
       type="button"

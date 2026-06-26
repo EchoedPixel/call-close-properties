@@ -1,7 +1,7 @@
 
 export const SITE = {
   name: "Call & Close Properties",
-  shortName: "Call & Close",
+  shortName: "CALL & CLOSE",
   tagline: "Real Estate Lead Generation & Sales Support",
   description:
     "Experienced real estate cold callers trained exclusively for wholesalers, realtors , and flippers. With clear communication skills and in-depth knowledge of all exit strategies, they quickly understand your acquisition goals and deliver leads that fit your exact criteria.",

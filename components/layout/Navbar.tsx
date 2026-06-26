@@ -9,28 +9,26 @@ import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false); // Added mount tracking
   const pathname = usePathname();
+  const { theme } = useTheme();
+  const isDark = mounted && theme === "dark";
+
+  // Handle client-side mounting
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
 
   return (
     <header
@@ -43,15 +41,20 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
         <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-12 w-13 items-center justify-center rounded-xl bg-white">
+          {/* Using explicit Tailwind utilities instead of a JS condition string */}
+        <div
+          className={`flex h-12 w-17 items-center justify-center rounded-xl ${
+            isDark ? "bg-black" : "bg-white"
+          }`}
+        >
               <Image
-                src="/logos.svg"
-                alt="Company Logo"
-                width={40}
-                height={40}
-                className="scale-120"
-              />
-            </div>
+              src="/logo_only.svg"
+              alt="Company Logo"
+              width={40}
+              height={40}
+              className="scale-80 w-auto h-auto"
+            />
+          </div>
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold leading-tight text-foreground transition-colors group-hover:text-primary-light">
               {SITE.shortName}

@@ -63,17 +63,17 @@ export function Hero() {
         </div>
 
         <FadeIn delay={0.5}>
-          <div className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mx-auto mt-20 grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {TRUST_INDICATORS.map((indicator) => (
               <div
                 key={indicator.label}
-                className="glass flex flex-col items-center rounded-xl px-3 py-4 text-center transition-colors duration-300 hover:border-primary/20"
+                className="glass flex flex-col items-center rounded-xl px-4 py-4 text-center transition-colors duration-300 hover:border-primary/20"
               >
                 <DynamicIcon
                   name={indicator.icon}
                   className="mb-2 h-5 w-5 text-primary"
                 />
-                <span className="text-[11px] leading-tight text-muted">
+                <span className="text-[15px] leading-tight text-muted">
                   {indicator.label}
                 </span>
               </div>
