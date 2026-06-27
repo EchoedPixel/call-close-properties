@@ -8,7 +8,7 @@ export const SITE = {
   email: "callandclosee@gmail.com",
   phone: "+1 (555) 987-6543",
   address: "Serving Real Estate Professionals Nationwide",
-  url: "https://callandclose.com",
+  url: "https://www.callcloseproperties.com/",
   bookingUrl:
     "https://calendar.app.google/47J12QscBW1mVb876",
   customBookingUrl:

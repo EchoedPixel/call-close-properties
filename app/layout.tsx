@@ -3,7 +3,6 @@ import { Inter, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { SITE } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,36 +21,64 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://callcloseproperties.com"),
+
   title: {
-    default: `${SITE.name} | Real Estate Lead Generation & Sales Support`,
-    template: `%s | ${SITE.name}`,
+    default: "Call & Close Properties | Real Estate Lead Generation",
+    template: "%s | Call & Close Properties",
   },
-  description: SITE.description,
+
+  description:
+    "Real estate lead generation specialists helping wholesalers, investors, and home-buying companies book qualified appointments through expert cold calling, lead qualification, and sales support.",
+
   keywords: [
     "real estate lead generation",
     "real estate appointment setting",
     "real estate cold calling",
-    "lead qualification real estate",
+    "lead qualification",
     "real estate sales support",
-    "property lead generation",
+    "wholesaler leads",
+    "real estate investors",
+    "home buying companies",
   ],
-  authors: [{ name: SITE.name }],
+
+  authors: [{ name: "Call & Close Properties" }],
+
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: SITE.name,
-    title: `${SITE.name} | Real Estate Lead Generation & Sales Support`,
-    description: SITE.description,
-    url: SITE.url,
+    url: "https://callcloseproperties.com",
+    siteName: "Call & Close Properties",
+    title: "Call & Close Properties | Real Estate Lead Generation",
+    description:
+      "Book more qualified appointments through expert real estate cold calling and lead generation.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Call & Close Properties",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} | Real Estate Lead Generation & Sales Support`,
-    description: SITE.description,
+    title: "Call & Close Properties | Real Estate Lead Generation",
+    description:
+      "Book more qualified appointments through expert real estate cold calling and lead generation.",
+    images: ["/og-image.png"],
   },
+
   robots: {
     index: true,
     follow: true,
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
