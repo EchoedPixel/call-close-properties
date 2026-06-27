@@ -55,24 +55,29 @@ export function Footer() {
               >
                 <Linkedin size={18} />
               </a>
-              <a
-                href={SITE.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted transition-all duration-300 hover:border-primary/40 hover:text-primary-light"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href={SITE.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted transition-all duration-300 hover:border-primary/40 hover:text-primary-light"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
+{/* TODO: Re-enable after the client provides the official Instagram and Facebook pages.
+
+<a
+  href={SITE.social.instagram}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted transition-all duration-300 hover:border-primary/40 hover:text-primary-light"
+  aria-label="Instagram"
+>
+  <Instagram size={18} />
+</a>
+
+<a
+  href={SITE.social.facebook}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted transition-all duration-300 hover:border-primary/40 hover:text-primary-light"
+  aria-label="Facebook"
+>
+  <Facebook size={18} />
+</a>
+
+*/}
             </div>
           </div>
 
@@ -126,15 +131,19 @@ export function Footer() {
                   {SITE.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-                  className="flex items-start gap-3 text-sm text-muted transition-colors hover:text-primary-light"
-                >
-                  <Phone size={18} className="mt-0.5 shrink-0 text-primary" />
-                  {SITE.phone}
-                </a>
-              </li>
+{/* TODO: Re-enable phone contact after the client provides the official business phone number.
+
+<li>
+  <a
+    href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+    className="flex items-start gap-3 text-sm text-muted transition-colors hover:text-primary-light"
+  >
+    <Phone size={18} className="mt-0.5 shrink-0 text-primary" />
+    {SITE.phone}
+  </a>
+</li>
+
+*/}
               <li className="flex items-start gap-3 text-sm text-muted">
                 <MapPin size={18} className="mt-0.5 shrink-0 text-primary" />
                 {SITE.address}
@@ -147,6 +156,8 @@ export function Footer() {
           <p className="text-sm text-muted">
             &copy; {currentYear} {SITE.name}. All rights reserved.
           </p>
+
+{/* TODO: Re-enable after the client provides the official Privacy Policy and Terms of Service pages.
           <div className="flex gap-8">
             <Link
               href="/contact"
@@ -161,6 +172,8 @@ export function Footer() {
               Terms of Service
             </Link>
           </div>
+          
+*/}
         </div>
       </div>
     </footer>

@@ -247,26 +247,29 @@ export function ContactForm() {
             <input
                 type="checkbox"
                 checked={formData.agreed}
-onChange={(e) => {
-    setFormData((prev) => ({
-        ...prev,
-        agreed: e.target.checked,
-    }));
+                onChange={(e) => {
+                    setFormData((prev) => ({
+                        ...prev,
+                        agreed: e.target.checked,
+                    }));
 
-    if (errors.agreed) {
-        setErrors((prev) => ({
-            ...prev,
-            agreed: undefined,
-        }));
-    }
-}}
+                    if (errors.agreed) {
+                        setErrors((prev) => ({
+                            ...prev,
+                            agreed: undefined,
+                        }));
+                    }
+                }}
                 className="mt-1"
             />
 
             <span>
-                I agree to be contacted by Call & Close Properties
-                regarding my inquiry. I understand my information
-                will only be used to respond to my request.
+              I agree to receive communications by text message about my
+              inquiry from <strong>Call &amp; Close Properties</strong>.
+              Consent is not a condition of purchase. You may opt out by
+              replying <strong>STOP</strong> or reply <strong>HELP </strong>
+              for more information. Message frequency varies. Message and
+              data rates may apply.
             </span>
         </label>
 

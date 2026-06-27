@@ -64,6 +64,7 @@ export default function ContactPage() {
                       </div>
                     </a>
                   </li>
+{/*                  
                   <li>
                     <a
                       href={`tel:${SITE.phone.replace(/\s/g, "")}`}
@@ -76,6 +77,7 @@ export default function ContactPage() {
                       </div>
                     </a>
                   </li>
+*/}
                   <li className="flex items-start gap-3 text-sm text-muted">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <div>
