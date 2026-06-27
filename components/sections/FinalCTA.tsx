@@ -17,7 +17,7 @@ export function FinalCTA() {
                 Ready to close more deals?
               </p>
               <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                Your Next Listing Starts With a Conversation
+                your next deal Starts With a Conversation
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base text-muted sm:text-lg">
                 Book a free strategy call and discover how Call & Close can fill

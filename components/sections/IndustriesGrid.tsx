@@ -17,7 +17,7 @@ export function IndustriesGrid() {
       <SectionHeader
         badge="Who We Serve"
         title="Built for Every Level of Real Estate"
-        description="Whether you're a solo agent or a national brokerage, our systems scale to match your ambition."
+        description=""
       />
 
       <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

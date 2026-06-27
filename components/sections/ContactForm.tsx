@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { Send, CheckCircle2 } from "lucide-react";
-import { CONTACT_SERVICE_OPTIONS } from "@/lib/constants";
+import { CONTACT_SERVICE_OPTIONS, AGENT_OPTIONS } from "@/lib/constants";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Select } from "@/components/ui/Select";
@@ -16,7 +16,9 @@ interface FormData {
   email: string;
   phone: string;
   service: string;
+  agents: string;
   message: string;
+  agreed: boolean;
 }
 
 interface FormErrors {
@@ -25,7 +27,9 @@ interface FormErrors {
   email?: string;
   phone?: string;
   service?: string;
+  agents?: string;
   message?: string;
+  agreed?: string;
 }
 
 export function ContactForm() {
@@ -38,11 +42,14 @@ export function ContactForm() {
     email: "",
     phone: "",
     service: preselectedService,
+    agents: "",
     message: "",
+    agreed: false
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -64,8 +71,14 @@ export function ContactForm() {
     if (!formData.service) {
       newErrors.service = "Please select a service";
     }
+    if (!formData.agents) {
+      newErrors.agents = "Please select the number of agents";
+    }
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
+    }
+    if (!formData.agreed) {
+      newErrors.agreed = "You must agree before submitting.";
     }
 
     setErrors(newErrors);
@@ -77,12 +90,39 @@ export function ContactForm() {
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setApiError(null);
 
-    // Simulate form submission — replace with API route or email service
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
+      const data = await res.json();
+
+      if (!res.ok) {
+        setApiError(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      // Success — show confirmation and reset form
+      setSubmitted(true);
+      setFormData({
+        fullName: "",
+        companyName: "",
+        email: "",
+        phone: "",
+        service: "",
+        agents: "",
+        message: "",
+        agreed: false,
+      });
+    } catch {
+      setApiError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -119,7 +159,9 @@ export function ContactForm() {
               email: "",
               phone: "",
               service: "",
+              agents: "",
               message: "",
+              agreed: false
             });
           }}
         >
@@ -142,7 +184,7 @@ export function ContactForm() {
         />
         <Input
           label="Company Name"
-          placeholder="Acme Corporation"
+          placeholder="ABC Corporation"
           value={formData.companyName}
           onChange={(e) => handleChange("companyName", e.target.value)}
           error={errors.companyName}
@@ -181,6 +223,16 @@ export function ContactForm() {
         required
       />
 
+      <Select
+        label="How Many Agents Do You Need?"
+        placeholder="Select number of agents"
+        options={AGENT_OPTIONS}
+        value={formData.agents}
+        onChange={(e) => handleChange("agents", e.target.value)}
+        error={errors.agents}
+        required
+      />
+
       <Textarea
         label="Message"
         placeholder="Tell us about your goals, target market, and timeline..."
@@ -190,7 +242,53 @@ export function ContactForm() {
         required
       />
 
-      <Button type="submit" variant="primary" className="w-full sm:w-auto">
+      <div className="space-y-2">
+        <label className="flex items-start gap-3 text-sm text-muted">
+            <input
+                type="checkbox"
+                checked={formData.agreed}
+onChange={(e) => {
+    setFormData((prev) => ({
+        ...prev,
+        agreed: e.target.checked,
+    }));
+
+    if (errors.agreed) {
+        setErrors((prev) => ({
+            ...prev,
+            agreed: undefined,
+        }));
+    }
+}}
+                className="mt-1"
+            />
+
+            <span>
+                I agree to be contacted by Call & Close Properties
+                regarding my inquiry. I understand my information
+                will only be used to respond to my request.
+            </span>
+        </label>
+
+        {errors.agreed && (
+            <p className="text-sm text-red-500">
+                {errors.agreed}
+            </p>
+        )}
+      </div>
+
+      {apiError && (
+        <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          {apiError}
+        </div>
+      )}
+
+      <Button
+        type="submit"
+        variant="primary"
+        className="w-full sm:w-auto"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? (
           "Sending..."
         ) : (

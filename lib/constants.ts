@@ -6,8 +6,8 @@ export const SITE = {
   description:
     "Experienced real estate cold callers trained exclusively for wholesalers, realtors , and flippers. With clear communication skills and in-depth knowledge of all exit strategies, they quickly understand your acquisition goals and deliver leads that fit your exact criteria.",
   email: "callandclosee@gmail.com",
-  phone: "+1 (555) 987-6543",
-  address: "Serving Real Estate Professionals Nationwide",
+  phone: "+1 (555) 000-0000",
+  address: "Nationwide",
   url: "https://www.callcloseproperties.com/",
   bookingUrl:
     "https://calendar.app.google/47J12QscBW1mVb876",
@@ -43,20 +43,6 @@ export const SERVICES = [
     ],
     icon: "Home",
     image: "/lead-generation.png",
-  },
-  {
-    slug: "appointment-setting",
-    title: "Appointment Setting",
-    description:
-      "We book listing appointments, buyer consultations, and property showings on your calendar with prospects who match your ideal client profile.",
-    features: [
-      "Calendar integration",
-      "Pre-appointment qualification",
-      "No-show reduction protocols",
-      "Automated confirmation sequences",
-    ],
-    icon: "CalendarCheck",
-    image: "/appointment-setting.png",
   },
   {
     slug: "cold-calling",
@@ -132,6 +118,13 @@ export const SERVICES = [
 
 export const CLIENT_TYPES = [
   {
+    slug: "investors-wholesalers",
+    name: "Investors & Wholesalers",
+    description:
+      "Off-market deal flow, motivated seller outreach, and investor lead campaigns built for volume and speed.",
+    icon: "TrendingUp",
+  },
+  {
     slug: "Home-Buying Companies",
     name: "Home-Buying Companies",
     description:
@@ -153,25 +146,11 @@ export const CLIENT_TYPES = [
     icon: "Building2",
   },
   {
-    slug: "investors-wholesalers",
-    name: "Investors & Wholesalers",
-    description:
-      "Off-market deal flow, motivated seller outreach, and investor lead campaigns built for volume and speed.",
-    icon: "TrendingUp",
-  },
-  {
     slug: "property-developers",
     name: "Property Developers",
     description:
       "Pre-sale lead generation, buyer interest campaigns, and appointment setting for new developments and luxury projects.",
     icon: "Landmark",
-  },
-  {
-    slug: "luxury-listings",
-    name: "Luxury Listings",
-    description:
-      "White-glove outreach for high-ticket properties—discreet, polished, and aligned with the expectations of luxury markets.",
-    icon: "Gem",
   },
 ];
 
@@ -186,9 +165,8 @@ export const STATS = [
 ];
 
 export const HERO_TRUST_POINTS = [
-  "Trusted by 80+ real estate professionals",
   "Real estate exclusive — not a generic call center",
-  "Average 47 qualified appointments per client",
+  "over 25 qualified  Lead a month",
 ];
 
 export const PROCESS_STEPS = [
@@ -242,57 +220,6 @@ export const WHY_CHOOSE_US = [
     description:
       "We measure success by appointments that show up and deals that close—not vanity metrics like dial counts or raw lead volume.",
     icon: "Target",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Call & Close booked 52 listing appointments in my first 60 days. I went from chasing leads to choosing which deals to take. This is the highest-ROI investment I've made in my business.",
-    author: "Victoria Ashford",
-    role: "Luxury Listing Agent",
-    company: "Ashford Realty Group",
-    rating: 5,
-  },
-  {
-    quote:
-      "We tried three lead gen companies before Call & Close. They're the only team that actually understands real estate—not just telemarketing. Our team's production increased 68% in one quarter.",
-    author: "Marcus Delgado",
-    role: "Team Leader",
-    company: "Delgado Real Estate Team",
-    rating: 5,
-  },
-  {
-    quote:
-      "The follow-up campaigns alone reactivated $2.1M in stale pipeline. Professional, discreet, and they represent our brand exactly how we would on every single call.",
-    author: "Jennifer Walsh",
-    role: "Managing Broker",
-    company: "Walsh & Partners Realty",
-    rating: 5,
-  },
-  {
-    quote:
-      "As an investor, speed matters. Call & Close delivers motivated seller leads consistently. We've closed 14 deals directly from their outreach in six months.",
-    author: "David Chen",
-    role: "Real Estate Investor",
-    company: "Chen Capital Properties",
-    rating: 5,
-  },
-  {
-    quote:
-      "Our pre-sale campaign for a $48M development generated 340 qualified buyer inquiries and 89 scheduled tours. Exceptional execution from start to finish.",
-    author: "Rachel Morrison",
-    role: "Director of Sales",
-    company: "Meridian Developments",
-    rating: 5,
-  },
-  {
-    quote:
-      "I was skeptical about outsourcing calls. Call & Close changed my mind within two weeks. The quality of every conversation reflects the premium service I provide.",
-    author: "James Whitfield",
-    role: "Top Producing Agent",
-    company: "Whitfield Estates",
-    rating: 5,
   },
 ];
 
@@ -355,11 +282,6 @@ export const FAQS = [
       "Every prospect is qualified against your criteria—budget, timeline, motivation, and location—before an appointment is booked. You receive detailed notes and call recordings for full transparency.",
   },
   {
-    question: "What CRMs and tools do you integrate with?",
-    answer:
-      "We integrate with Follow Up Boss, kvCORE, LionDesk, Salesforce, HubSpot, Chime, BoomTown, and most major real estate CRMs. Calendar sync via Google Calendar or Outlook.",
-  },
-  {
     question: "Will callers represent my brand professionally?",
     answer:
       "Absolutely. Every agent is trained on your brand voice, market positioning, and communication standards. Calls are recorded and reviewed weekly to maintain premium quality.",
@@ -368,33 +290,6 @@ export const FAQS = [
     question: "What does pricing look like?",
     answer:
       "Engagements are custom-scoped based on your market, volume needs, and services required. Book a free strategy call and we'll provide a transparent proposal tailored to your goals.",
-  },
-];
-
-export const TEAM = [
-  {
-    name: "Karim Hassan",
-    role: "Founder & CEO",
-    bio: "Former top-producing agent turned sales strategist. Built Call & Close to give real estate professionals the outbound infrastructure that closes deals.",
-    initials: "KH",
-  },
-  {
-    name: "Elena Vasquez",
-    role: "Director of Operations",
-    bio: "12 years scaling real estate sales teams. Ensures every campaign runs with precision, accountability, and measurable outcomes.",
-    initials: "EV",
-  },
-  {
-    name: "Thomas Reid",
-    role: "Head of Client Success",
-    bio: "Dedicated to client ROI with a 94% retention rate. Leads onboarding, strategy sessions, and ongoing campaign optimization.",
-    initials: "TR",
-  },
-  {
-    name: "Amanda Brooks",
-    role: "Training & Quality Lead",
-    bio: "Designs real estate-specific training programs that ensure every call sounds like it came from your office—not a call center.",
-    initials: "AB",
   },
 ];
 
@@ -441,6 +336,16 @@ export const FOOTER_SERVICES = SERVICES.map((s) => ({
 }));
 
 export const CONTACT_SERVICE_OPTIONS = SERVICES.map((s) => s.title);
+
+export const AGENT_OPTIONS = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6–10",
+  "10+",
+];
 
 export const BOOKING_BENEFITS = [
   {

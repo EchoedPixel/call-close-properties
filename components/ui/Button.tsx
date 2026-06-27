@@ -11,6 +11,7 @@ interface ButtonProps {
   onClick?: () => void;
   type?: "button" | "submit";
   external?: boolean;
+  disabled?: boolean;
 }
 
 const variants = {
@@ -41,11 +42,13 @@ export function Button({
   onClick,
   type = "button",
   external = false,
+  disabled = false,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center font-medium transition-colors duration-150",
     variants[variant],
     sizes[size],
+    disabled && "pointer-events-none opacity-50",
     className
   );
 
@@ -71,7 +74,7 @@ export function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} className={classes} disabled={disabled}>
       {children}
     </button>
   );

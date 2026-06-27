@@ -67,6 +67,7 @@ export default function ServicesPage() {
                           src={service.image}
                           alt={service.title}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover object-center"
                           priority={index === 0}
                         />

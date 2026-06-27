@@ -3,7 +3,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { CORE_VALUES, TEAM } from "@/lib/constants";
+import { CORE_VALUES } from "@/lib/constants";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export const metadata = createPageMetadata(
@@ -81,7 +81,6 @@ export default function AboutPage() {
         </div>
       </Section>
       
-
       <Section variant="elevated">
         <FadeIn>
           <h2 className="mb-12 text-center font-heading text-3xl font-bold text-white lg:text-4xl">
@@ -97,37 +96,6 @@ export default function AboutPage() {
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   {value.description}
-                </p>
-              </Card>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <FadeIn>
-          <h2 className="mb-4 text-center font-heading text-3xl font-bold text-white lg:text-4xl">
-            Leadership Team
-          </h2>
-          <p className="mx-auto mb-14 max-w-2xl text-center text-muted">
-            Real estate operators committed to your production goals.
-          </p>
-        </FadeIn>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {TEAM.map((member, index) => (
-            <FadeIn key={member.name} delay={index * 0.1}>
-              <Card glass className="text-center">
-                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-gold font-heading text-2xl font-bold text-background shadow-lg shadow-primary/20">
-                  {member.initials}
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-white">
-                  {member.name}
-                </h3>
-                <p className="mt-1 text-sm font-medium text-primary-light">
-                  {member.role}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-muted">
-                  {member.bio}
                 </p>
               </Card>
             </FadeIn>
