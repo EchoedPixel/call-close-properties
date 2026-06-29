@@ -3,6 +3,8 @@ import { Inter, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { TawkChat } from "@/components/TawkChat";
+import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -70,9 +72,20 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
 
+  alternates: {
+    canonical: "https://callcloseproperties.com",
+  },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 
   icons: {
@@ -105,6 +118,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <JsonLd />
       </head>
       <body
         className={`${inter.variable} ${manrope.variable} ${plusJakarta.variable} font-sans bg-background text-foreground antialiased`}
@@ -113,6 +127,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-screen pt-20">{children}</main>
           <Footer />
+          <TawkChat />
         </ThemeProvider>
       </body>
     </html>

@@ -109,6 +109,7 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  onClick={() => setIsOpen(false)}
                   className={cn(
                     "block rounded-xl px-4 py-3.5 text-base font-medium transition-colors",
                     pathname === link.href
