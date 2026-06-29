@@ -5,6 +5,7 @@ function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE.name,
+    alternateName: "Call and Close Properties",
     url: SITE.url,
     logo: `${SITE.url}og-image.png`,
     description: SITE.description,

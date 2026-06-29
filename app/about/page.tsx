@@ -17,7 +17,7 @@ export default function AboutPage() {
       <PageHero
         badge="About Us"
         title="The Sales Infrastructure Real Estate Deserves"
-        description="Call & Close Properties was founded on a simple belief: real estate investors should spend their time closing deals, not chasing leads."
+        description="Call & Close Properties, also known as Call and Close Properties, was founded on a simple belief: real estate investors should spend their time closing deals, not chasing leads."
       />
 
       <Section>
