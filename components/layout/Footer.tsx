@@ -157,23 +157,21 @@ export function Footer() {
             &copy; {currentYear} {SITE.name}. All rights reserved.
           </p>
 
-{/* TODO: Re-enable after the client provides the official Privacy Policy and Terms of Service pages.
-          <div className="flex gap-8">
-            <Link
-              href="/contact"
-              className="text-sm text-muted transition-colors hover:text-primary-light"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm text-muted transition-colors hover:text-primary-light"
-            >
-              Terms of Service
-            </Link>
-          </div>
-          
-*/}
+        <div className="flex gap-8">
+          <Link
+            href="/privacy-policy"
+            className="text-sm text-muted transition-colors hover:text-primary-light"
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            href="/terms-of-service"
+            className="text-sm text-muted transition-colors hover:text-primary-light"
+          >
+            Terms of Service
+          </Link>
+        </div>
+
         </div>
       </div>
     </footer>

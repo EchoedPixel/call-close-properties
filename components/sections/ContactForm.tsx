@@ -267,9 +267,27 @@ export function ContactForm() {
               I agree to receive communications by text message about my
               inquiry from <strong>Call &amp; Close Properties</strong>.
               Consent is not a condition of purchase. You may opt out by
-              replying <strong>STOP</strong> or reply <strong>HELP </strong>
+              replying <strong>STOP</strong> or reply <strong>HELP</strong>{" "}
               for more information. Message frequency varies. Message and
-              data rates may apply.
+              data rates may apply. By submitting, you agree to our{" "}
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-light underline hover:text-primary"
+              >
+                Privacy Policy
+              </a>{" "}
+              and{" "}
+              <a
+                href="/terms-of-service"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-light underline hover:text-primary"
+              >
+                Terms of Service
+              </a>
+              .
             </span>
         </label>
 

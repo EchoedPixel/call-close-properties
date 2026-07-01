@@ -1,6 +1,28 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const windowMs = 10 * 60 * 1000; // 10 minutes
+  const maxRequests = 3;
+
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + windowMs });
+    return false;
+  }
+
+  if (entry.count >= maxRequests) {
+    return true;
+  }
+
+  entry.count += 1;
+  return false;
+}
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -196,6 +218,19 @@ function escapeHtml(str: string): string {
 // ---------------------------------------------------------------------------
 
 export async function POST(request: Request) {
+
+  const ip =
+  request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+  request.headers.get("x-real-ip") ??
+  "unknown";
+
+if (isRateLimited(ip)) {
+  return NextResponse.json(
+    { error: "Too many requests. Please wait a few minutes before trying again." },
+    { status: 429 }
+  );
+}
+
   try {
     // 1. Environment check
     const resendApiKey = process.env.RESEND_API_KEY;
